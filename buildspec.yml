@@ -1,0 +1,21 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 20
+    commands:
+      - cd client
+      - npm install
+      - npm run build
+      - cd ../server
+      - npm install
+
+  build:
+    commands:
+      - echo "Build completed"
+
+artifacts:
+  files:
+    - '**/*'
+  discard-paths: no
